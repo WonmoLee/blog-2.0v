@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
+import com.cos.blog.action.board.BoardHomeAction;
 import com.cos.blog.action.user.UsersJoinAction;
 import com.cos.blog.action.user.UsersJoinProcAction;
 import com.cos.blog.action.user.UsersLoginAction;
-import com.cos.blog.action.user.UsersLoginProcAction;
 
-// http://localhost:8000/blog/user
-@WebServlet("/user")
-public class UsersController extends HttpServlet {
+// http://localhost:8000/blog/board
+@WebServlet("/board")
+public class BoardController extends HttpServlet {
 	private final static String TAG = "UsersController : ";
 	private static final long serialVersionUID = 1L;
        
     
-    public UsersController() {
+    public BoardController() {
         super();
     }
 
@@ -43,9 +43,9 @@ public class UsersController extends HttpServlet {
 	}
 	
 	public Action router(String cmd) {
-		if(cmd.equals("signup")) {
+		if(cmd.equals("home")) {
 			// 회원가입 페이지로 이동
-			return new UsersJoinAction();
+			return new BoardHomeAction();
 		}else if(cmd.equals("joinProc")) {
 			// 회원가입을 진행 한 후 -> index.jsp로 이동
 			return new UsersJoinProcAction();
@@ -60,7 +60,6 @@ public class UsersController extends HttpServlet {
 			return new UsersLoginAction();
 		}else if(cmd.equals("loginProc")) {
 			// 회원 로그인을 수행 한 후 -> 세션에 등록을하고 -> index.jsp로 이동
-			return new UsersLoginProcAction();
 		}
 		return null;
 	}

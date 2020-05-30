@@ -10,6 +10,8 @@ import java.util.List;
 import com.cos.blog.db.DBConn;
 import com.cos.blog.model.Users;
 
+import jdk.nashorn.internal.ir.SetSplitState;
+
 public class UsersRepository {
 	
 	private static final String TAG = "UsersRepository : ";
@@ -22,6 +24,39 @@ public class UsersRepository {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	
+	public Users findByUsernameAndPassword(String username, String password) {
+		final String SQL = "SELECT id, username, email, address, userProfile, userRole, createDate FROM USERS WHERE username = ? AND password = ?";
+		Users user = new Users();
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			
+			//물음표 완성하기
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			//if 돌려서 re -> java오브젝트에 집어넣기
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				user = new Users();
+				
+				user.setId(rs.getInt("id"));
+				user.setUsername(rs.getString("username"));
+				user.setEmail(rs.getString("email"));
+				user.setAddress(rs.getString("address"));
+				user.setUserProfile(rs.getString("userProfile"));
+				user.setUserRole(rs.getString("userRole"));
+				user.setCreateDate(rs.getTimestamp("createDate"));
+			}
+			
+			return user;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "findByUsernameAndPassword : " + e.getMessage());
+		}
+		return null;
+	}
 	
 	public int save(Users user) {
 		final String SQL = "INSERT INTO USERS(ID, USERNAME, PASSWORD, EMAIL, ADDRESS, USERROLE, CREATEDATE) VALUES(USERS_SEQ.NEXTVAL, ?,?,?,?,?,SYSDATE)";

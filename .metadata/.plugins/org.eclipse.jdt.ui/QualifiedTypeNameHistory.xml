@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.lwm.blog.repository.UsersRepository"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.Connection"/>
+<fullyQualifiedTypeName name="com.lwm.blog.model.Users"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="javax.naming.Context"/>
+<fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.lwm.blog.db.DBConn"/>
+</qualifiedTypeNameHistroy>

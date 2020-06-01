@@ -1,8 +1,8 @@
-INDEX VERSION 1.4+C:\Users\21mo\Desktop\source\blog 2.0v\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+INDEX VERSION 1.4+C:\src\blog-2.0v\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2053670400.index
+906077594.index
+2646736626.index
+1198162732.index
+500257696.index
 3666893704.index
-3013042990.index
-913153667.index
-233954591.index
-1322874070.index
-4242458078.index
-3234721149.index
+480433518.index

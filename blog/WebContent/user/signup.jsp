@@ -27,6 +27,8 @@
   
   <div class="form-group">
     <label for="address">Address:</label>
+    <!-- float-right는 인라인블록이여야지 가능하다. -->
+    <button type="button" class="btn btn-warning float-right" onclick="goPopup()">주소검색</button>
     <input type="text" class="form-control" id="address" placeholder="Enter password" name="address" required>
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
@@ -35,5 +37,18 @@
   <button type="submit" class="btn btn-primary">가입하기</button>
 </form>
 </div>
+
+<script>
+function goPopup(){
+	var pop = window.open("/blog/juso/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+}
+
+function jusoCallBack(roadFullAddr){
+	var tfAddress = document.querySelector("#address");
+	tfAddress.value = roadFullAddr;
+	// document.form.roadFullAddr.value = roadFullAddr;		
+}
+
+</script>
 
 <%@ include file="../include/footer.jsp" %>

@@ -15,4 +15,7 @@
 <fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.user.UsersLogoutAction"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+<fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 </qualifiedTypeNameHistroy>

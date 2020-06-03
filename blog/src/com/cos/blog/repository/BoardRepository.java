@@ -16,7 +16,7 @@ public class BoardRepository {
 	private static final String TAG = "UsersRepository : ";
 	private static BoardRepository instance = new BoardRepository();
 	private BoardRepository() {}
-	public static BoardRepository getInstance() {
+		public static BoardRepository getInstance() {
 		return instance;
 	}
 	
@@ -124,7 +124,6 @@ public class BoardRepository {
 		} finally {
 			DBConn.close(conn, pstmt, rs);
 		}
-		
 		
 		return null;
 	}

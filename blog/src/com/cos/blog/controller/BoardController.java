@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
 import com.cos.blog.action.board.BoardHomeAction;
+import com.cos.blog.action.board.BoardWriteAction;
+import com.cos.blog.action.board.BoardWriteProcAction;
 import com.cos.blog.action.user.UsersJoinAction;
 import com.cos.blog.action.user.UsersJoinProcAction;
 import com.cos.blog.action.user.UsersLoginAction;
@@ -46,20 +48,12 @@ public class BoardController extends HttpServlet {
 		if(cmd.equals("home")) {
 			// 회원가입 페이지로 이동
 			return new BoardHomeAction();
-		}else if(cmd.equals("joinProc")) {
+		}else if(cmd.equals("write")) {
 			// 회원가입을 진행 한 후 -> index.jsp로 이동
-			return new UsersJoinProcAction();
-		}else if(cmd.equals("update")) {
-			// 회원 수정 페이지로 이동(세션에 User 오브젝트를 가지고 있을 예정)
-		}else if(cmd.equals("updateProc")) {
-			// 회원 수정을 진행 한 후 -> index.jsp로 이동
-		}else if(cmd.equals("delete")) {
-			// 회원삭제를 진행 한 후 -> 로그아웃을 하고 -> index.jsp로 이동
-		}else if(cmd.equals("login")) {
-			// 회원 로그인 페이지로 이동
-			return new UsersLoginAction();
-		}else if(cmd.equals("loginProc")) {
-			// 회원 로그인을 수행 한 후 -> 세션에 등록을하고 -> index.jsp로 이동
+			return new BoardWriteAction();   //글쓰기
+		}else if(cmd.equals("writeProc")) {
+			// 회원가입을 진행 한 후 -> index.jsp로 이동
+			return new BoardWriteProcAction();   //글쓰기
 		}
 		return null;
 	}

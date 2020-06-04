@@ -13,7 +13,7 @@ import com.cos.blog.model.Users;
 
 public class BoardRepository {
 	
-	private static final String TAG = "UsersRepository : ";
+	private static final String TAG = "BoardRepository : ";
 	private static BoardRepository instance = new BoardRepository();
 	private BoardRepository() {}
 		public static BoardRepository getInstance() {
@@ -25,13 +25,17 @@ public class BoardRepository {
 	private ResultSet rs = null;
 	
 	public int save(Board board) {
-		final String SQL = "";
+		final String SQL = "INSERT INTO BOARD(ID, USERID, TITLE, CONTENT, READCOUNT, CREATEDATE) VALUES(BOARD_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
 			
+			pstmt.setInt(1, board.getUserid());
+			pstmt.setString(2, board.getTitle());
+			pstmt.setString(3, board.getContent());
+			pstmt.setInt(4, board.getReadCount());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -84,17 +88,28 @@ public class BoardRepository {
 	}
 	
 	public List<Board> findAll() {
-		final String SQL = "";
+		final String SQL = "SELECT * FROM BOARD ORDER BY ID DESC";
 		List<Board> boards = new ArrayList<>();
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
-			//물음표 완성하기
 			
 			//while 돌려서 rs -> java오브젝트에 집어넣기
-			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board board = new Board(
+						rs.getInt("id"),
+						rs.getInt("userid"),
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getInt("readCount"),
+						rs.getTimestamp("createDate")
+				);
+				boards.add(board);
+			}
 			return boards;
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(TAG + "findAll : " + e.getMessage());

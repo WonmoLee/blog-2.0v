@@ -18,4 +18,10 @@ public class Board {
 	private String content;
 	private int readCount;
 	private Timestamp createDate;
+	
+//	public String getTitle() {
+		// XSS공격 방어하기
+//		title = title.replace("<", "&lt;").replaceAll(">", "&gt;");
+//		return title;
+//	}
 }

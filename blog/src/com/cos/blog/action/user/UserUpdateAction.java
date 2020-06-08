@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
 
-public class UsersJoinAction implements Action{
+public class UserUpdateAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dis = request.getRequestDispatcher("user/update.jsp");

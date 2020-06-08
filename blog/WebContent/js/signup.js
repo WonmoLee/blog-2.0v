@@ -12,6 +12,8 @@ function jusoCallBack(roadFullAddr){
 	// document.form.roadFullAddr.value = roadFullAddr;		
 }
 
+//juso.go.kr 라이브러리 함수 (끝) ------------------
+
 //중복체크함수
 function validate() {
 	if(!isCheckedUsername){
@@ -45,5 +47,4 @@ function usernameCheck() {
 		console.log(error);
 	});
 	
-	isCheckedUsername = true;
 }

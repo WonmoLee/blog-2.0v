@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cos.blog.db.DBConn;
+import com.cos.blog.dto.DetailResponseDto;
 import com.cos.blog.model.Board;
 import com.cos.blog.model.Users;
 
@@ -49,13 +50,15 @@ public class BoardRepository {
 	}
 	
 	public int update(Board board) {
-		final String SQL = "";
+		final String SQL = "UPDATE BOARD SET TITLE = ?, CONTENT = ? WHERE ID = ?";
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getId());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,13 +72,13 @@ public class BoardRepository {
 	}
 	
 	public int deleteById(int id) {
-		final String SQL = "";
+		final String SQL = "DELETE FROM BOARD WHERE ID = ?";
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setInt(1, id);
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -121,18 +124,36 @@ public class BoardRepository {
 		return null;
 	}
 	
-	public Board findById(int id) {
-		final String SQL = "";
-		Board board = new Board();
+	public DetailResponseDto findById(int id) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("SELECT B.ID, B.USERID, B.TITLE, B.CONTENT, B.READCOUNT, B.CREATEDATE, U.USERNAME ");
+		sb.append("FROM BOARD B INNER JOIN USERS U ");
+		sb.append("ON B.USERID = U.ID ");
+		sb.append("WHERE B.ID = ?");
+		final String SQL = sb.toString();
+		DetailResponseDto dto = null;
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
 			//if 돌려서 rs -> java오브젝트에 집어넣기
-			
-			return board;
+			if(rs.next()) {
+				dto = new DetailResponseDto();
+				Board board = Board.builder()
+						.id(rs.getInt(1))
+						.userid(rs.getInt(2))
+						.title(rs.getString(3))
+						.content(rs.getString(4))
+						.readCount(rs.getInt(5))
+						.createDate(rs.getTimestamp(6))
+						.build();
+					dto.setBoard(board);
+					dto.setUsername(rs.getString(7));
+			}
+			return dto;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(TAG + "findById : " + e.getMessage());

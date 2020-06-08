@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
 import com.cos.blog.repository.UsersRepository;
+import com.cos.blog.util.Script;
 
 public class UsersUsernameCheckAction implements Action{
 	
@@ -21,6 +22,6 @@ public class UsersUsernameCheckAction implements Action{
 		int result = usersRepository.findByUsername(username);
 		
 		PrintWriter out = response.getWriter();
-		out.print(result);  //println을 하면 출력시 뒤에 \n이 생략되어있어 비교가안되 오류가뜬다. 이거 조심
+		out.print(result);
 	}
 }

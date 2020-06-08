@@ -47,7 +47,7 @@ public class UsersRepository {
 		} finally {
 			DBConn.close(conn, pstmt, rs);
 		}
-		return 0;
+		return -1;
 	}
 	
 	public Users findByUsernameAndPassword(String username, String password) {

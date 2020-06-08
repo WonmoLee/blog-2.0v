@@ -30,7 +30,14 @@
   
   <div class="form-group form-check">
     <label class="form-check-label">
-      <input class="form-check-input" type="checkbox" name="remember"> 아이디 기억하기
+    <c:choose>
+    	<c:when test="${cookie.remember != null}">
+      		<input class="form-check-input" type="checkbox" name="remember" checked> 아이디 기억하기
+      	</c:when>
+      	<c:otherwise>
+      		<input class="form-check-input" type="checkbox" name="remember"> 아이디 기억하기
+      	</c:otherwise>
+    </c:choose>
     </label>
   </div>
   

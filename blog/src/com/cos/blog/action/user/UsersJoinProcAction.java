@@ -20,7 +20,7 @@ public class UsersJoinProcAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 0.유효성 검사
 		if
-		(
+		( 
 				request.getParameter("username").equals("") ||
 				request.getParameter("username") == null ||
 				request.getParameter("password").equals("") ||

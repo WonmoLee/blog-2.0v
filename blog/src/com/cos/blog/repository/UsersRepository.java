@@ -52,7 +52,7 @@ public class UsersRepository {
 	
 	public Users findByUsernameAndPassword(String username, String password) {
 		final String SQL = "SELECT id, username, email, address, userProfile, userRole, createDate FROM USERS WHERE username = ? AND password = ?";
-		Users user = new Users();
+		Users user = null;
 		
 		try {
 			conn = DBConn.getConnection();
@@ -108,14 +108,18 @@ public class UsersRepository {
 	}
 	
 	public int update(Users user) {
-		final String SQL = "";
+		final String SQL = "UPDATE USERS SET PASSWORD = ?, EMAIL = ?, ADDRESS = ? WHERE ID = ?";
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setString(1, user.getPassword());
+			pstmt.setString(2, user.getEmail());
+			pstmt.setString(3, user.getAddress());
+			pstmt.setInt(4, user.getId());
 			return pstmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(TAG + "update : " + e.getMessage());
@@ -171,16 +175,25 @@ public class UsersRepository {
 	}
 	
 	public Users findById(int id) {
-		final String SQL = "";
-		Users user = new Users();
+		final String SQL = "SELECT * FROM USERS WHERE ID = ?";
+		Users user = null;
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
 			//if 돌려서 rs -> java오브젝트에 집어넣기
-			
+			if(rs.next()) {
+				user = Users.builder()
+						.id(rs.getInt("id"))
+						.username(rs.getString("username"))
+						.email(rs.getString("email"))
+						.address(rs.getString("address"))
+						.createDate(rs.getTimestamp("createDate"))
+						.build();
+			}
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();

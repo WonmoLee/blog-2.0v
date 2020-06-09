@@ -3,7 +3,7 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%
 	//방법1 (지향)
-	//response.sendRedirect("/blog/board?cmd=home");
+	//response.sendRedirect("/blog/board?cmd=home&page=0");
 %>
 <!--방법 2 (지양)-->
 <c:redirect url="/board?cmd=home&page=0"/>

@@ -8573,3 +8573,75 @@ Java Model Exception: Java Model Status [[Working copy] __2F_blog_2F_WebContent_
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2020-06-09 13:55:32.538
 !MESSAGE [Working copy] __2F_blog_2F_WebContent_2F_user_2F_login_2E_jsp.java [in <default> [in src [in blog]]] does not exist
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:46:51.711
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.jCYFkCpO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:46:51.718
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.jCYFkCpO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:46:51.725
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:46:51.732
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.jCYFkCpO => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:15.015
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:15.022
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5d05bb29[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=631)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:15.028
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.906
+!MESSAGE Boot LS startup time from start to initialized: 1871ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.937
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.GQxMOaiXisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.946
+!MESSAGE subscribing to classpath changes: sts4.classpath.GQxMOaiX isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.953
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.966
+!MESSAGE subsribers = {sts4.classpath.GQxMOaiX=Send Classpath Notifications(2118)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.973
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.983
+!MESSAGE project blog ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:16.994
+!MESSAGE Preparing classpath changed notification blog
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.004
+!MESSAGE project Servers ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.014
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.020
+!MESSAGE project Servers SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.026
+!MESSAGE classpath=59 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.033
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.041
+!MESSAGE buffering callback sts4.classpath.GQxMOaiX blog false 59
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.047
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.GQxMOaiX => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.054
+!MESSAGE executing callback sts4.classpath.GQxMOaiX 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-09 14:52:17.077
+!MESSAGE executing callback sts4.classpath.GQxMOaiX SUCCESS [done]

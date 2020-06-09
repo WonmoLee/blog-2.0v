@@ -6,4 +6,4 @@
 	//response.sendRedirect("/blog/board?cmd=home");
 %>
 <!--방법 2 (지양)-->
-<c:redirect url="/board?cmd=home"/>
+<c:redirect url="/board?cmd=home&page=0"/>

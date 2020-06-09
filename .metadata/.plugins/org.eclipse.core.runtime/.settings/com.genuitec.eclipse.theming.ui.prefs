@@ -1,11 +1,13 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1589387624000
-configurationInstallLocation=/C\:/tools/sts-4.5.1.RELEASE/
+codemix.dont.show.upsell.until=1593020009142
+configurationInstallLocation=/C\:/Users/21mo/Desktop/DOC/developset/utils/sts-4.5.1.RELEASE/
 eclipse.preferences.version=1
 iconcolormode=primary
 iconreplacement=false
 includeThemingInOomph=false
-last.download.attempt.time=1591701812877
-lastConfiguration=1591701801209
-newinstall=true
+last.download.attempt.time=1591724746185
+lastConfiguration=1591724736121
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray

@@ -2,13 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
-<c:when test="${empty param.keyword}">
-	<c:set var="pagePrev" value="/blog/board?cmd=home&page=${param.page-1}"/>
-	<c:set var="pageNext" value="/blog/board?cmd=home&page=${param.page+1}"/>
-</c:when>
-<c:otherwise>
-	<c:set var="pagePrev" value="/blog/board?cmd=search&page=${param.page-1}&keyword=${param.keyword}"/>
-	<c:set var="pageNext" value="/blog/board?cmd=search&page=${param.page+1}&keyword=${param.keyword}"/>
+	<c:when test="${empty param.keyword}">
+		<c:set var="pagePrev" value="/blog/board?cmd=home&page=${param.page-1}"/>
+		<c:set var="pageNext" value="/blog/board?cmd=home&page=${param.page+1}"/>
+	</c:when>
+	<c:otherwise>
+		<c:set var="pagePrev" value="/blog/board?cmd=search&page=${param.page-1}&keyword=${param.keyword}"/>
+		<c:set var="pageNext" value="/blog/board?cmd=search&page=${param.page+1}&keyword=${param.keyword}"/>
 	</c:otherwise>
 </c:choose> 
 

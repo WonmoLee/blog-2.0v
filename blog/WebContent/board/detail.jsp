@@ -27,8 +27,6 @@
   		<div class="container p-3 my-3 border">${dto.board.content}</div>
   	</div>
 </div>
-
-
 <script src="/blog/js/detail.js"></script>
 
 <%@ include file="../include/footer.jsp" %>

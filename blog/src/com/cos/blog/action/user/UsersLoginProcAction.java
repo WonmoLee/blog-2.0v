@@ -49,6 +49,7 @@ public class UsersLoginProcAction implements Action{
 				// value => remember=ssar 
 				Cookie cookie = new Cookie("remember", user.getUsername());
 				response.addCookie(cookie);
+				System.out.println(cookie + "받아와짐");
 				
 				//response.setHeader("Set-Cookie", "remember=ssar");
 			}else {

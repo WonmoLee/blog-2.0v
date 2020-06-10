@@ -18,3 +18,7 @@ function deleteById(boardId){
 		alert("서버 오류");
 	});
 }
+
+function back(page) {
+	location.href = "/blog/board?cmd=home&page=" + page;
+}

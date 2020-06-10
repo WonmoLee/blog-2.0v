@@ -25,6 +25,49 @@ public class BoardRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
+	public int updateReadCount(int id) {
+		final String SQL = "UPDATE board SET readCount = readCount + 1 WHERE id = ?";
+
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			// 물음표 완성하기
+
+			pstmt.setInt(1, id);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG+"updateReadCount : "+e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+
+		return -1;
+	}
+	
+	public int count(String keyword) {
+		final String SQL = "SELECT count(*) FROM board WHERE TITLE LIKE ? OR CONTENT LIKE ?";
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, "%"+keyword+"%");
+			pstmt.setString(2, "%"+keyword+"%");
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG+"count(keyword) : "+e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+
+		return -1;
+	}
+	
 	public int count() {
 		final String SQL = "SELECT count(*) FROM board";
 		
@@ -109,6 +152,49 @@ public class BoardRepository {
 		}
 		
 		return -1;
+	}
+	
+	public List<Board> findAll(int page, String keyword) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C008824)*/ID, ");
+		sb.append("USERID, TITLE, CONTENT, READCOUNT, CREATEDATE ");
+		sb.append("FROM BOARD ");
+		sb.append("WHERE TITLE LIKE ? OR CONTENT LIKE ? ");
+		sb.append("OFFSET ? ROWS FETCH NEXT 3 ROWS ONLY");
+		//System.out.println(sb.toString());
+		final String SQL = sb.toString();
+		List<Board> boards = new ArrayList<>();
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, "%"+keyword+"%");
+			pstmt.setString(2, "%"+keyword+"%");
+			pstmt.setInt(3, page*3);
+			//while 돌려서 rs -> java오브젝트에 집어넣기
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board board = new Board(
+						rs.getInt("id"),
+						rs.getInt("userid"),
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getInt("readCount"),
+						rs.getTimestamp("createDate")
+				);
+				boards.add(board);
+			}
+			return boards;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(TAG + "findAll(page, keyword) : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+		
+		
+		return null;
 	}
 	
 	public List<Board> findAll(int page) {

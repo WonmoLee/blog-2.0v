@@ -39,6 +39,8 @@ public class UsersProfileUploadProcAction implements Action{
 							new DefaultFileRenamePolicy()
 					);
 			fileName = multi.getFilesystemName("userProfile");
+			
+			
 			System.out.println("fileName : " + fileName);
 			id = Integer.parseInt(multi.getParameter("id"));
 			

@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-	String uploadPath = request.getRealPath("/images");
+	String uploadPath = request.getRealPath("/img");
 
 	int size = 10*1024*1024;
 	String name = "";

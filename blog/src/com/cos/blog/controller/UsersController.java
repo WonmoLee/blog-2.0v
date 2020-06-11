@@ -15,6 +15,7 @@ import com.cos.blog.action.user.UsersJoinProcAction;
 import com.cos.blog.action.user.UsersLoginAction;
 import com.cos.blog.action.user.UsersLoginProcAction;
 import com.cos.blog.action.user.UsersLogoutAction;
+import com.cos.blog.action.user.UsersProfileUpload;
 import com.cos.blog.action.user.UsersUsernameCheckAction;
 
 // http://localhost:8000/blog/user
@@ -71,6 +72,8 @@ public class UsersController extends HttpServlet {
 			return new UsersLogoutAction();
 		}else if(cmd.equals("usernameCheck")) {
 			return new UsersUsernameCheckAction();
+		}else if(cmd.equals("profileUpload")) {
+			return new UsersProfileUpload();
 		}
 		return null;
 	}

@@ -7,7 +7,7 @@
 	<div class="d-flex justify-content-center">
 	<form action="/blog/user?cmd=profileUploadProc" method="POST" enctype="multipart/form-data">
 		<div class="form-group">
-			<img onerror="this.src='/blog/img/userProfile.png'" src="${sessionScope.principal.userProfile}" width="350px" height="300px" />
+			<img id="img__wrap" onerror="this.src='/blog/img/userProfile.png'" src="${sessionScope.principal.userProfile}" width="350px" height="300px" />
 		</div>
 		<div class="form-group bg-light">
 			<input type="file" name="userProfile" id="img__preview"/>
@@ -20,10 +20,6 @@
 	</div>
 </div>
 
-<script>
-	$("#img__preview").on("change", function(e){
-		console.log(e);
-	});
-</script>
+<script src="/blog/js/imgPreview.js"></script>
 
 <%@ include file="../include/footer.jsp"%>

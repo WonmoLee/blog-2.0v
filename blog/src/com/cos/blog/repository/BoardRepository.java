@@ -97,7 +97,6 @@ public class BoardRepository {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
 			pstmt.setInt(1, board.getUserid());
 			pstmt.setString(2, board.getTitle());
 			pstmt.setString(3, board.getContent());

@@ -13,7 +13,7 @@ import com.cos.blog.model.Reply;
 
 public class ReplyRepository {
 	
-	private static final String TAG = "UsersRepository : ";
+	private static final String TAG = "ReplyRepository : ";
 	private static ReplyRepository instance = new ReplyRepository();
 	private ReplyRepository() {}
 	public static ReplyRepository getInstance() {
@@ -25,13 +25,15 @@ public class ReplyRepository {
 	private ResultSet rs = null;
 	
 	public int save(Reply reply) {
-		final String SQL = "";
-		
+		final String SQL = "INSERT INTO REPLY(ID, USERID, BOARDID, CONTENT, CREATEDATE) VALUES(REPLY_SEQ.NEXTVAL, ?, ?, ?, SYSDATE)";
+		System.out.println("reply.getUserid() : " + reply.getUserid() + " : reply.getBoardid() : " + reply.getBoardid());
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setInt(1, reply.getUserid());
+			pstmt.setInt(2, reply.getBoardid());
+			pstmt.setString(3, reply.getContent());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

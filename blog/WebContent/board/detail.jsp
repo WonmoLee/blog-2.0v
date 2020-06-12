@@ -43,13 +43,13 @@
 				<div class="panel panel-info">
 					<div class="panel-heading m-2"><b>Comment</b></div>
 					<div class="panel-body">
-						<textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
+						<textarea id="reply__write__form" class="form-control" placeholder="write a comment..." rows="3"></textarea>
 						<br>
-						<button type="button" class="btn btn-primary pull-right">댓글쓰기</button>
+						<button onclick="replyWrite(${detailDto.boardDto.board.id}, ${sessionScope.principal.id})" type="button" class="btn btn-primary pull-right">댓글쓰기</button>
 						<div class="clearfix"></div>
 						<hr />
 						<!-- 댓글 리스트 시작-->
-						<ul class="media-list">
+						<ul id="reply__list" class="media-list">
 						
 							<c:forEach var="replyDto" items="${detailDto.replyDtos}">
 								<!-- 댓글 아이템 -->
@@ -74,6 +74,34 @@
 	<!-- 댓글 박스 끝 -->
   	
 </div>
+
+<script>
+	function replyWrite(boardId, userId) {
+		var data = {
+				boardid: boardId,
+				userid: userId,
+				content: $("#reply__write__form").val()
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "/blog/reply?cmd=writeProc",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=UTF-8",
+			dataType: "text"
+		}).done(function(result) {
+			// 정상응답
+			// 1. reply__list를 찾아서 내부를 비우기
+			$('#reply__list').empty();
+			// 2. ajax 재호출 findAll()
+			
+			// 3.reply__list를 찾아서 내부에 채워주기
+		}).fail(function(error) {
+			
+		});
+	}
+</script>
+
 <script src="/blog/js/detail.js"></script>
 
 <%@ include file="../include/footer.jsp" %>

@@ -56,7 +56,6 @@ INDEX VERSION 1.131+C:\src\blog-2.0v\.metadata\.plugins\org.eclipse.jdt.core
 4029500759.index
 3980862942.index
 3881777827.index
-1624865996.index
 2254571451.index
 431841504.index
 3581447250.index

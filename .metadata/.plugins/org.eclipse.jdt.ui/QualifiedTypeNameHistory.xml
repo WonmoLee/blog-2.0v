@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.user.UsersUsernameCheckAction"/>
 <fullyQualifiedTypeName name="com.cos.blog.db.DBConn"/>
-<fullyQualifiedTypeName name="com.cos.blog.repository.UsersRepository"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.board.BoardWriteAction"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.board.BoardWriteProcAction"/>
@@ -22,7 +21,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="com.cos.blog.repository.BoardRepository"/>
-<fullyQualifiedTypeName name="com.cos.blog.model.Users"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
@@ -35,9 +33,18 @@
 <fullyQualifiedTypeName name="com.cos.blog.model.Board"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.DetailResponseDto"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.board.BoardDeleteAction"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.user.UserUpdateAction"/>
-<fullyQualifiedTypeName name="com.cos.blog.action.Action"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.user.UserUpdateProcAction"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.user.UsersProfileUpload"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.Action"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.user.UsersProfileUploadProcAction"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+<fullyQualifiedTypeName name="com.cos.blog.repository.UsersRepository"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.cos.blog.model.Users"/>
+<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
 </qualifiedTypeNameHistroy>

@@ -1,6 +1,7 @@
 package com.cos.blog.model;
 
-import com.sun.jmx.snmp.Timestamp;
+
+import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

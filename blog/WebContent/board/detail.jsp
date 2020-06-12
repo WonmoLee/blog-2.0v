@@ -54,7 +54,7 @@
 							<c:forEach var="replyDto" items="${detailDto.replyDtos}">
 								<!-- 댓글 아이템 -->
 								<li class="media">	
-									<img onerror="this.src='/blog/image/userProfile.png'" src="${replyDto.userProfile}" alt="" class="img-circle">		
+									<img onerror="this.src='/blog/img/userProfile.png'" src="${replyDto.userProfile}" alt="" class="img-circle">		
 									<div class="media-body">
 										<strong class="text-primary">${replyDto.username}</strong>
 										<p>

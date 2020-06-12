@@ -91,11 +91,11 @@
 			dataType: "text"
 		}).done(function(result) {
 			// 정상응답
-			// 1. reply__list를 찾아서 내부를 비우기
-			$('#reply__list').empty();
-			// 2. ajax 재호출 findAll()
 			
-			// 3.reply__list를 찾아서 내부에 채워주기
+			$('#reply__list').empty();
+			
+			
+			
 		}).fail(function(error) {
 			
 		});
@@ -103,6 +103,7 @@
 </script>
 
 <script src="/blog/js/detail.js"></script>
+<script src="/blog/js/reply.js"></script>
 
 <%@ include file="../include/footer.jsp" %>
 

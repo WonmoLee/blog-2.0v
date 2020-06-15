@@ -18,20 +18,16 @@
  	<br/>
  	<h6 class="m-2">
  		작성자 : <i>${detailDto.boardDto.username}</i>
- 	</h6>
- 	<br/>
- 	<h6 class="m-2">
  		조회수  : <i>${detailDto.boardDto.board.readCount}</i>
  	</h6>
-   	<br/>
-   	<br/>
-   	<br/>
-  	<h3>
-  		<b>${detailDto.boardDto.board.title}</b>
-  	</h3>
+ 	<br/>
+ 	<h3 class="m-2">
+ 		<b>${detailDto.boardDto.board.title}</b>
+ 	</h3>
+   	<hr/>
   		
   	<div class="form-group">
-  		<div class="container p-3 my-3 border">${detailDto.boardDto.board.content}</div>
+  		<div class="m-2">${detailDto.boardDto.board.content}</div>
   	</div>
   	
   	<hr />
@@ -45,7 +41,7 @@
 					<div class="panel-body">
 						<textarea id="reply__write__form" class="form-control" placeholder="write a comment..." rows="3"></textarea>
 						<br>
-						<button onclick="replyWrite(${detailDto.boardDto.board.id}, ${sessionScope.principal.id})" type="button" class="btn btn-primary pull-right">댓글쓰기</button>
+						<button onclick="replyWrite(${detailDto.boardDto.board.id}, ${sessionScope.principal.id})" class="btn btn-primary pull-right">댓글쓰기</button>
 						<div class="clearfix"></div>
 						<hr />
 						<!-- 댓글 리스트 시작-->
@@ -53,7 +49,7 @@
 						
 							<c:forEach var="replyDto" items="${detailDto.replyDtos}">
 								<!-- 댓글 아이템 -->
-								<li class="media">	
+								<li id="reply-${replyDto.reply.id}" class="media">	
 									<img onerror="this.src='/blog/img/userProfile.png'" src="${replyDto.userProfile}" alt="" class="img-circle">		
 									<div class="media-body">
 										<strong class="text-primary">${replyDto.username}</strong>
@@ -63,8 +59,8 @@
 									</div>
 									<div class="m-2">
 										<c:if test="${replyDto.reply.userid eq sessionScope.principal.id}">
-										<i onclick="replyUpdate(${replyDto.reply.id})" style="font-size:30px" class="material-icons">edit</i>&nbsp;&nbsp;&nbsp;
-										<i onclick="replyDelete(${replyDto.reply.id})" style="font-size:30px" class="material-icons">delete</i>
+<%-- 										<i onclick="replyUpdate(${replyDto.reply.id})" class="material-icons i__btn">edit</i>&nbsp;&nbsp;&nbsp; --%>
+										<i onclick="replyDelete(${replyDto.reply.id})" class="material-icons i__btn">delete</i>
 										</c:if>
 									</div>
 								</li>

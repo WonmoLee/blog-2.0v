@@ -2,12 +2,14 @@ package com.cos.blog.action.reply;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
+import com.cos.blog.dto.ReplyResponseDto;
 import com.cos.blog.model.Reply;
 import com.cos.blog.repository.ReplyRepository;
 import com.cos.blog.util.Script;
@@ -35,13 +37,11 @@ public class ReplyWriteProcAction implements Action{
 		int result = replyRepository.save(reply);
 		// save 성공하면 1, 실패하면0, -1
 		if(result == 1) {
-			
-			Script.outText(result + "", response);
-			
-		} else {
-			
-			Script.outText("댓글 등록에 실패하였습니다.", response);
-			
+			List<ReplyResponseDto> replyDtos = replyRepository.findAll(reply.getBoardid());
+			String replyDtosJson = gson.toJson(replyDtos);
+			Script.outJson(replyDtosJson, response);
+		}else {
+			Script.outJson(result+"", response);
 		}
 		// Script.outText() 응답
 	}

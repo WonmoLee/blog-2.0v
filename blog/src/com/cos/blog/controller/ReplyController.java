@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.blog.action.Action;
+import com.cos.blog.action.reply.ReplyDeleteProcAction;
 import com.cos.blog.action.reply.ReplyWriteProcAction;
 
 
@@ -44,6 +45,8 @@ public class ReplyController extends HttpServlet {
 	public Action router(String cmd) {
 		if(cmd.equals("writeProc")) {
 			return new ReplyWriteProcAction();
+		} else if(cmd.equals("deleteProc")) {
+			return new ReplyDeleteProcAction();
 		}
 		return null;
 	}

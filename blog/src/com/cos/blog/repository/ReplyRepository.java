@@ -67,17 +67,17 @@ public class ReplyRepository {
 	}
 	
 	public int deleteById(int id) {
-		final String SQL = "";
+		final String SQL = "DELETE FROM REPLY WHERE ID = ?";
 		
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			//물음표 완성하기
-			
+			pstmt.setInt(1, id);
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println(TAG + "delete : " + e.getMessage());
+			System.out.println(TAG + "deleteById : " + e.getMessage());
 		} finally {
 			DBConn.close(conn, pstmt);
 		}

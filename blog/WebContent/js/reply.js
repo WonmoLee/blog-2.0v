@@ -1,4 +1,10 @@
 function replyWrite(boardId, userId){
+	console.log(userid)
+	if(userid === undefined) {
+		alert("로그인이 필요합니다.")
+		return;
+	}
+	
 	var data = {
 		boardid: boardId,
 		userid: userId,

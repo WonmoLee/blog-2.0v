@@ -61,6 +61,12 @@
 											${replyDto.reply.content}
 										</p>
 									</div>
+									<div class="m-2">
+										<c:if test="${replyDto.reply.userid eq sessionScope.principal.id}">
+										<i onclick="replyUpdate(${replyDto.reply.id})" style="font-size:30px" class="material-icons">edit</i>&nbsp;&nbsp;&nbsp;
+										<i onclick="replyDelete(${replyDto.reply.id})" style="font-size:30px" class="material-icons">delete</i>
+										</c:if>
+									</div>
 								</li>
 							</c:forEach>
 						</ul>
@@ -75,32 +81,7 @@
   	
 </div>
 
-<script>
-	function replyWrite(boardId, userId) {
-		var data = {
-				boardid: boardId,
-				userid: userId,
-				content: $("#reply__write__form").val()
-		};
 
-		$.ajax({
-			type: "POST",
-			url: "/blog/reply?cmd=writeProc",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=UTF-8",
-			dataType: "text"
-		}).done(function(result) {
-			// 정상응답
-			
-			$('#reply__list').empty();
-			
-			
-			
-		}).fail(function(error) {
-			
-		});
-	}
-</script>
 
 <script src="/blog/js/detail.js"></script>
 <script src="/blog/js/reply.js"></script>

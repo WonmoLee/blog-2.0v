@@ -36,6 +36,7 @@
   </div>
   
   <button type="submit" class="btn btn-primary">로그인</button>
+  <a href=""><img height="38px" src="/blog/img/kakao_login_medium_narrow.png"></img></a>
 </form>
 </div>
 

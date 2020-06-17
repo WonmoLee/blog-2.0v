@@ -37,11 +37,8 @@
 <fullyQualifiedTypeName name="com.cos.blog.repository.UsersRepository"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.cos.blog.model.Users"/>
-<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.RepliesResponseDto"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.cos.blog.dto.ReplyResponseDto"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
 <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
@@ -53,6 +50,10 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="com.cos.blog.model.Reply"/>
-<fullyQualifiedTypeName name="com.cos.blog.repository.ReplyRepository"/>
 <fullyQualifiedTypeName name="com.nhncorp.lucy.security.xss.XssPreventer"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.reply.ReplyDeleteProcAction"/>
+<fullyQualifiedTypeName name="com.cos.blog.repository.ReplyRepository"/>
+<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.cos.blog.dto.ReplyResponseDto"/>
 </qualifiedTypeNameHistroy>

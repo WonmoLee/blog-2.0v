@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.lwm.blog.repository.UsersRepository"/>
-<fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.Connection"/>
 <fullyQualifiedTypeName name="com.lwm.blog.model.Users"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="javax.naming.Context"/>
@@ -35,8 +33,6 @@
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
 <fullyQualifiedTypeName name="com.cos.blog.repository.UsersRepository"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.cos.blog.model.Users"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.RepliesResponseDto"/>
 <fullyQualifiedTypeName name="lombok.Data"/>
@@ -45,7 +41,6 @@
 <fullyQualifiedTypeName name="lombok.Builder"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.DetailResponseDto"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.BoardResponseDto"/>
-<fullyQualifiedTypeName name="com.cos.blog.action.Action"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.reply.ReplyWriteProcAction"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
@@ -53,7 +48,16 @@
 <fullyQualifiedTypeName name="com.nhncorp.lucy.security.xss.XssPreventer"/>
 <fullyQualifiedTypeName name="com.cos.blog.action.reply.ReplyDeleteProcAction"/>
 <fullyQualifiedTypeName name="com.cos.blog.repository.ReplyRepository"/>
-<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.cos.blog.dto.ReplyResponseDto"/>
+<fullyQualifiedTypeName name="com.cos.blog.util.Script"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.Action"/>
+<fullyQualifiedTypeName name="com.cos.blog.action.kakao.KakaoCallbackAction"/>
+<fullyQualifiedTypeName name="com.cos.blog.model.Users"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="javax.net.ssl.HttpsURLConnection"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.cos.blog.dto.KakaoProfile"/>
+<fullyQualifiedTypeName name="com.cos.blog.model.OAuthToken"/>
 </qualifiedTypeNameHistroy>

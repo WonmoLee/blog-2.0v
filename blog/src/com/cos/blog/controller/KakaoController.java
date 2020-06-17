@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cos.blog.action.Action;
 import com.cos.blog.action.kakao.KakaoCallbackAction;
@@ -17,6 +18,10 @@ import com.cos.blog.action.kakao.KakaoCallbackAction;
 	public class KakaoController extends HttpServlet {
 		private final static String TAG = "KakaoController : ";
 		private static final long serialVersionUID = 1L;
+		
+		public KakaoController() {
+			super();
+		}
 
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			doProcess(request, response);
@@ -27,7 +32,9 @@ import com.cos.blog.action.kakao.KakaoCallbackAction;
 		}
 
 		protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			// http://localhost:8000/blog/user?cmd=signUp
+			HttpSession session = request.getSession();
+			session.setAttribute("path", request.getContextPath());
+			
 			String cmd = request.getParameter("cmd");
 			System.out.println(TAG + "doProcess : " + cmd);
 			Action action = router(cmd);
@@ -36,8 +43,7 @@ import com.cos.blog.action.kakao.KakaoCallbackAction;
 
 		public Action router(String cmd) {
 			if (cmd.equals("callback")) {
-				// 회원가입 페이지로 이동
-				return new KakaoCallbackAction();
+				return new KakaoCallbackAction(); 
 			}
 			return null;
 		}

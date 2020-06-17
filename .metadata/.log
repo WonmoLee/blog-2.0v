@@ -3989,3 +3989,69 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2020-06-17 11:35:08.985
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:24.305
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:24.316
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@74faa12[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=631)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:24.328
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:24.429
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.127
+!MESSAGE Boot LS startup time from start to initialized: 2749ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.180
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.hSgLUKbwisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.192
+!MESSAGE subscribing to classpath changes: sts4.classpath.hSgLUKbw isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.209
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.224
+!MESSAGE subsribers = {sts4.classpath.hSgLUKbw=Send Classpath Notifications(265)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.232
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.243
+!MESSAGE project blog ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.255
+!MESSAGE project Servers ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.261
+!MESSAGE Preparing classpath changed notification blog
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.268
+!MESSAGE project Servers SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.275
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.281
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.288
+!MESSAGE classpath=60 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.294
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.hSgLUKbw => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.301
+!MESSAGE buffering callback sts4.classpath.hSgLUKbw blog false 60
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.315
+!MESSAGE executing callback sts4.classpath.hSgLUKbw 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-06-17 11:35:27.344
+!MESSAGE executing callback sts4.classpath.hSgLUKbw SUCCESS [done]
